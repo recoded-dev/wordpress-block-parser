@@ -3,9 +3,9 @@
 namespace Tests;
 
 use Recoded\WordPressBlockParser\Tokenizer;
-use Recoded\WordPressBlockParser\Value\BlockClosing;
-use Recoded\WordPressBlockParser\Value\BlockOpening;
-use Recoded\WordPressBlockParser\Value\SelfClosingBlock;
+use Recoded\WordPressBlockParser\Tokens\BlockClosing;
+use Recoded\WordPressBlockParser\Tokens\BlockOpening;
+use Recoded\WordPressBlockParser\Tokens\SelfClosingBlock;
 
 final class TokenizerTest extends TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Recoded\WordPressBlockParser\Value;
+namespace Recoded\WordPressBlockParser\Tokens;
 
 abstract class Token
 {

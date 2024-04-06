@@ -4,12 +4,12 @@ namespace Recoded\WordPressBlockParser;
 
 use Generator;
 use IteratorAggregate;
-use Recoded\WordPressBlockParser\Value\BlockClosing;
-use Recoded\WordPressBlockParser\Value\BlockOpening;
-use Recoded\WordPressBlockParser\Value\SelfClosingBlock;
+use Recoded\WordPressBlockParser\Tokens\BlockClosing;
+use Recoded\WordPressBlockParser\Tokens\BlockOpening;
+use Recoded\WordPressBlockParser\Tokens\SelfClosingBlock;
 
 /**
- * @implements \IteratorAggregate<int, \Recoded\WordPressBlockParser\Value\Token>
+ * @implements \IteratorAggregate<int, \Recoded\WordPressBlockParser\Tokens\Token>
  */
 final class Tokenizer implements IteratorAggregate
 {

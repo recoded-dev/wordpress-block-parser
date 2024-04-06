@@ -1,15 +1,14 @@
 <?php
 
-namespace Recoded\WordPressBlockParser\Value;
+namespace Recoded\WordPressBlockParser\Tokens;
 
-final class SelfClosingBlock extends Token
+final class BlockClosing extends Token
 {
     /**
-     * Create new SelfClosingBlock instance.
+     * Create new BlockClosing instance.
      *
      * @param string $namespace
      * @param string $name
-     * @param array<string, mixed> $attributes
      * @param int $startsAt
      * @param int $length
      * @return void
@@ -17,7 +16,6 @@ final class SelfClosingBlock extends Token
     public function __construct(
         public readonly string $namespace,
         public readonly string $name,
-        public readonly array $attributes,
         int $startsAt,
         int $length,
     ) {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Recoded\WordPressBlockParser\Value;
+namespace Recoded\WordPressBlockParser\Tokens;
 
-final class BlockOpening extends Token
+final class SelfClosingBlock extends Token
 {
     /**
-     * Create new BlockOpening instance.
+     * Create new SelfClosingBlock instance.
      *
      * @param string $namespace
      * @param string $name
