@@ -6,6 +6,8 @@ use Recoded\WordPressBlockParser\Tokens\SelfClosingBlock as SelfClosingBlockToke
 
 final class SelfClosingBlock extends AbstractBlock
 {
+    public readonly SelfClosingBlockToken $token;
+
     /**
      * Create new SelfClosingBlock instance.
      *
@@ -16,12 +18,14 @@ final class SelfClosingBlock extends AbstractBlock
      * @return void
      */
     public function __construct(
-        public readonly string $namespace,
-        public readonly string $name,
-        public readonly array $attributes,
-        public readonly SelfClosingBlockToken $token,
+        string $namespace,
+        string $name,
+        array $attributes,
+        SelfClosingBlockToken $token,
     ) {
-        //
+        parent::__construct($namespace, $name, $attributes);
+
+        $this->token = $token;
     }
 
     /**

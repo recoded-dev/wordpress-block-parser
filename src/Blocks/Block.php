@@ -5,8 +5,15 @@ namespace Recoded\WordPressBlockParser\Blocks;
 use Recoded\WordPressBlockParser\Tokens\BlockClosing;
 use Recoded\WordPressBlockParser\Tokens\BlockOpening;
 
+/**
+ * @TODO find better name, block is too generic
+ */
 final class Block extends AbstractBlock
 {
+    public readonly string $content;
+    public readonly BlockOpening $opening;
+    public readonly BlockClosing $closing;
+
     /**
      * Create new Block instance.
      *
@@ -19,14 +26,18 @@ final class Block extends AbstractBlock
      * @return void
      */
     public function __construct(
-        public readonly string $namespace,
-        public readonly string $name,
-        public readonly array $attributes,
-        public readonly string $content,
-        public readonly BlockOpening $opening,
-        public readonly BlockClosing $closing,
+        string $namespace,
+        string $name,
+        array $attributes,
+        string $content,
+        BlockOpening $opening,
+        BlockClosing $closing,
     ) {
-        //
+        parent::__construct($namespace, $name, $attributes);
+
+        $this->content = $content;
+        $this->opening = $opening;
+        $this->closing = $closing;
     }
 
     /**
