@@ -5,7 +5,7 @@ namespace Recoded\WordPressBlockParser\Blocks;
 use Recoded\WordPressBlockParser\Tokens\BlockClosing;
 use Recoded\WordPressBlockParser\Tokens\BlockOpening;
 
-final class Block
+final class Block extends AbstractBlock
 {
     /**
      * Create new Block instance.
@@ -27,5 +27,25 @@ final class Block
         public readonly BlockClosing $closing,
     ) {
         //
+    }
+
+    /**
+     * Get the offset on which the block starts.
+     *
+     * @return int
+     */
+    public function getStart(): int
+    {
+        return $this->opening->startsAt;
+    }
+
+    /**
+     * Get the offset on which the block ends.
+     *
+     * @return int
+     */
+    public function getEnd(): int
+    {
+        return $this->closing->startsAt + $this->closing->length;
     }
 }
