@@ -58,6 +58,7 @@ final class BlockParser implements IteratorAggregate
                     namespace: $token->namespace,
                     name: $token->name,
                     attributes: $token->attributes,
+                    token: $token,
                 );
             } elseif ($token instanceof BlockOpening && $this->stackDepth++ === 0) {
                 $opening = $token;
@@ -77,6 +78,8 @@ final class BlockParser implements IteratorAggregate
                         $openedAt,
                         $token->startsAt - $openedAt,
                     ),
+                    opening: $opening,
+                    closing: $token,
                 );
             }
         }
